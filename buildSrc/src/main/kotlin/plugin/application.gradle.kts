@@ -63,6 +63,7 @@ ksp {
 }
 
 dependencies {
+    implementation(project(":core-platform"))
     androidCoreImplementation()
     koinImplementation()
     androidTestingImplementation()

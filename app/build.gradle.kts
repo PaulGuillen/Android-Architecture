@@ -13,6 +13,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core-platform"))
+    implementation(project(":core-data"))
+    implementation(project(":core-domain"))
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.activity)
     implementation(libs.material)

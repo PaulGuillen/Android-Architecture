@@ -21,4 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Android-Architecture"
 include(":app")
- 
+include(":core-data")
+include(":core-domain")
+include(":core-platform")
+include(":navigation")
+include(":session")
+include(":feature:util")
+include(":feature:auth")

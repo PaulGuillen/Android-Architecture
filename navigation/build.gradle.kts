@@ -1,0 +1,26 @@
+import dependence.koinImplementation
+import dependence.retrofitImplementation
+import dependence.uiCoreLibsImplementation
+
+plugins {
+    id("plugin.android.lib")
+    id("androidx.navigation.safeargs.kotlin")
+    id("org.jetbrains.kotlin.plugin.serialization")
+}
+
+android {
+    namespace = "com.devpaul.navigation"
+}
+
+dependencies {
+    implementation(project(":core-data"))
+    implementation(libs.androidx.fragment)
+    implementation(libs.androidx.activity)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.koin.navigation)
+    implementation(libs.kotlinx.serialization.json)
+    koinImplementation()
+    uiCoreLibsImplementation()
+    retrofitImplementation()
+}
