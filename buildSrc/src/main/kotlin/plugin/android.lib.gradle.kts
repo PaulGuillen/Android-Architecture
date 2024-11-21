@@ -7,6 +7,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
+    id("plugin.environment")
 }
 
 android {
@@ -43,7 +44,7 @@ android {
 }
 
 ksp {
-    arg("KOIN_DEFAULT_MODULE","false")
+    arg("KOIN_DEFAULT_MODULE", "false")
 }
 
 dependencies {
