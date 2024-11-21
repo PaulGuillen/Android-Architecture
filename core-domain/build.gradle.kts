@@ -9,5 +9,6 @@ java {
 }
 
 dependencies {
+    implementation(project(":session"))
     implementation(libs.kotlinx.coroutines.core)
 }

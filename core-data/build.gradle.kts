@@ -1,3 +1,5 @@
+import dependence.*
+
 plugins {
     id("plugin.android.lib")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -8,5 +10,11 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":core-domain"))
+    implementation(project(":session"))
+    implementation(libs.kotlinx.serialization.json)
+    uiCoreLibsImplementation()
+    retrofitImplementation()
+    koinImplementation()
+    datastoreImplementation()
 }

@@ -1,6 +1,4 @@
-import dependence.koinImplementation
-import dependence.retrofitImplementation
-import dependence.uiCoreLibsImplementation
+import dependence.*
 
 plugins {
     id("plugin.android.lib")
@@ -13,6 +11,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":session"))
     implementation(project(":core-data"))
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.activity)

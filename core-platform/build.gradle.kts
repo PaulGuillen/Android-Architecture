@@ -1,5 +1,4 @@
-import dependence.retrofitImplementation
-import dependence.uiCoreLibsImplementation
+import dependence.*
 
 plugins {
     id("plugin.android.lib")
@@ -12,6 +11,7 @@ android {
 
 dependencies {
     implementation(project(":core-domain"))
+    implementation(project(":navigation"))
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.activity)
     implementation(libs.navigation.fragment)

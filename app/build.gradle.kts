@@ -13,9 +13,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":navigation"))
     implementation(project(":core-platform"))
     implementation(project(":core-data"))
     implementation(project(":core-domain"))
+    implementation(project(":feature:auth"))
+    implementation(project(":feature:util"))
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.activity)
     implementation(libs.material)
