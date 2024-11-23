@@ -1,8 +1,7 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver

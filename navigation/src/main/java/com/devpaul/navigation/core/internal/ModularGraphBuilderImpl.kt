@@ -1,4 +1,4 @@
-package com.telefonica.navigation.core.internal
+package com.devpaul.navigation.core.internal
 
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
@@ -11,21 +11,21 @@ import androidx.navigation.fragment.DialogFragmentNavigatorDestinationBuilder
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.get
-import com.telefonica.navigation.core.Constants
-import com.telefonica.navigation.core.ModularDestination
-import com.telefonica.navigation.core.ModularGraphBuilder
+import com.devpaul.navigation.core.Constants
+import com.devpaul.navigation.core.ModularDestination
+import com.devpaul.navigation.core.ModularGraphBuilder
 import kotlin.reflect.KClass
 
 internal class ModularGraphBuilderImpl(
     private val navController: NavController,
     startDestination: ModularDestination,
     route: ModularDestination? = null,
-): ModularGraphBuilder {
+) : ModularGraphBuilder {
 
     private val navGraphBuilder = NavGraphBuilder(
         provider = navController.navigatorProvider,
         startDestination = startDestination.route,
-        route = route?.route
+        route = route?.route,
     )
 
     override fun createFragment(
@@ -35,7 +35,7 @@ internal class ModularGraphBuilderImpl(
         val builderDestination = FragmentNavigatorDestinationBuilder(
             navGraphBuilder.provider[FragmentNavigator::class],
             destination.route,
-            fragment
+            fragment,
         )
         builderDestination.argument(name = Constants.ARG_NAME) {
             type = NavType.StringType

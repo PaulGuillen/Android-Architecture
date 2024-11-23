@@ -24,11 +24,9 @@
             <ImageView
                 android:layout_marginStart="20dp"
                 android:id="@+id/toolbar_logo"
-                android:background="@drawable/ic_logo_movistar"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_gravity="start"
-                android:contentDescription="@string/todo" />
+                android:layout_gravity="start" />
 
             <TextView
                 android:id="@+id/toolbar_title"

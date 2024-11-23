@@ -1,16 +1,15 @@
-package com.telefonica.navigation.core.activity
+package com.devpaul.navigation.core.activity
 
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
-import com.telefonica.navigation.core.ModularDestination
-import com.telefonica.navigation.core.ModularGraphBuilder
-import com.telefonica.navigation.core.navController
-import com.telefonica.navigation.core.modularGraph
-import com.telefonica.navigation.R
+import com.devpaul.navigation.core.ModularDestination
+import com.devpaul.navigation.core.ModularGraphBuilder
+import com.devpaul.navigation.core.navController
+import com.devpaul.navigation.core.modularGraph
 
 abstract class ModularActivity(
     @IdRes val navHostFragmentId: Int
-): AppCompatActivity() {
+) : AppCompatActivity() {
 
     private val navController by navController(navHostFragmentId)
 

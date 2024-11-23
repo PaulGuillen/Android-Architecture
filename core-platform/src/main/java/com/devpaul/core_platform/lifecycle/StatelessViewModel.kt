@@ -1,11 +1,11 @@
 package com.telefonica.core_platform.lifecycle
 
 import androidx.lifecycle.ViewModel
+import com.devpaul.core_domain.Defaults
 import com.telefonica.core_platform.lifecycle.base.UiEventHolder
 import com.telefonica.core_platform.lifecycle.base.UiIntentHolder
 import com.telefonica.core_platform.lifecycle.base.ViewModelLoadable
-import com.telefonica.core_domain.entity.Defaults
-import com.telefonica.core_domain.entity.Output
+import com.devpaul.core_domain.Output
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.trySendBlocking
 import kotlinx.coroutines.flow.MutableStateFlow

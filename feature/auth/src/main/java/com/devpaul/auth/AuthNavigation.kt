@@ -1,4 +1,10 @@
 package com.devpaul.auth
 
-class AuthNavigation {
+import com.devpaul.auth.ui.AuthFragment
+import com.devpaul.navigation.MainGraph
+import com.devpaul.navigation.core.ModularGraphBuilder
+import com.devpaul.navigation.core.fragment
+
+fun ModularGraphBuilder.authNavigation() {
+    fragment<AuthFragment, MainGraph.AuthFragment>()
 }

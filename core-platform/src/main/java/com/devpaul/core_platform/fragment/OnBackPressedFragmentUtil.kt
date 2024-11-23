@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import androidx.activity.ComponentDialog
 import androidx.activity.OnBackPressedCallback
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.telefonica.core_platform.fragment.base.OnBackPressedFragment
 
-fun Fragment.onBackPressedCallback(): Lazy<OnBackPressedCallback?>{
-    return object: Lazy<OnBackPressedCallback?> {
+fun Fragment.onBackPressedCallback(): Lazy<OnBackPressedCallback?> {
+    return object : Lazy<OnBackPressedCallback?> {
 
         private var isInit: Boolean = false
         private var _value: OnBackPressedCallback? = null
@@ -26,18 +26,21 @@ fun Fragment.onBackPressedCallback(): Lazy<OnBackPressedCallback?>{
                             }
                         }
                         _value = callback
-                        when(fragment) {
-                            is DialogFragment -> when(val dialog = fragment.dialog) {
+                        when (fragment) {
+                            is DialogFragment -> when (val dialog = fragment.dialog) {
                                 is BottomSheetDialog -> {
                                     dialog.onBackPressedDispatcher
                                         .addCallback(fragment, callback)
                                 }
+
                                 is ComponentDialog -> {
                                     dialog.onBackPressedDispatcher
                                         .addCallback(fragment, callback)
                                 }
+
                                 else -> Unit
                             }
+
                             else -> {
                                 fragment.requireActivity().onBackPressedDispatcher
                                     .addCallback(fragment, callback)
@@ -57,6 +60,6 @@ fun Fragment.onBackPressedCallback(): Lazy<OnBackPressedCallback?>{
  * Llama al método [onBackPressed] del fragmento actual si dicho fragmento implementa la interfaz [OnBackPressedFragment].
  * Este método permite activar manualmente el comportamiento personalizado de retroceso del fragmento.
  */
-fun <T: OnBackPressedFragment> T.callOnBackPressed(){
+fun <T : OnBackPressedFragment> T.callOnBackPressed() {
     onBackPressed()
 }

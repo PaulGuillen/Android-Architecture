@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment

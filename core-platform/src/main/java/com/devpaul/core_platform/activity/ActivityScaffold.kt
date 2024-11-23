@@ -1,7 +1,7 @@
-package com.telefonica.core_platform.activity
+package com.devpaul.core_platform.activity
 
-import com.telefonica.core_platform.entity.BottomNavMode
-import com.telefonica.core_platform.entity.ToolbarMode
+import com.devpaul.core_platform.entity.BottomNavMode
+import com.devpaul.core_platform.entity.ToolbarMode
 
 interface ActivityScaffold {
 

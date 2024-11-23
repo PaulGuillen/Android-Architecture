@@ -5,13 +5,13 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.appcompat.widget.Toolbar
-import com.telefonica.core.R
+import com.devpaul.core_platform.R
+
 
 open class BaseFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     fun setToolbarTitle(title: String) {

@@ -1,4 +1,4 @@
-package com.telefonica.core_domain.entity
+package com.devpaul.core_domain
 
 sealed class Output<out T, out E> {
 

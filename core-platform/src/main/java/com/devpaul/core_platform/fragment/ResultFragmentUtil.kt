@@ -1,10 +1,10 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.telefonica.core_platform.entity.Communicable
-import com.telefonica.core_platform.entity.ResultAction
+import com.devpaul.core_platform.entity.Communicable
+import com.devpaul.core_platform.entity.ResultAction
 
 /**
  * Clave utilizada para almacenar el valor de resultado en un conjunto de datos (Bundle) al enviar resultados

@@ -1,7 +1,8 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import android.os.Build
-import com.telefonica.core.BuildConfig
+import com.devpaul.core_platform.BuildConfig
+
 import java.io.BufferedReader
 import java.io.File
 import java.io.InputStreamReader

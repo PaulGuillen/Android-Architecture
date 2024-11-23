@@ -1,9 +1,9 @@
-package com.telefonica.core_platform.activity
+package com.devpaul.core_platform.activity
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.telefonica.core_platform.entity.BottomNavMode
-import com.telefonica.core_platform.entity.ToolbarMode
+import com.devpaul.core_platform.entity.BottomNavMode
+import com.devpaul.core_platform.entity.ToolbarMode
 import com.telefonica.core_platform.fragment.base.FragmentScaffold
 
 internal fun Fragment.requireActivityScaffold(): ActivityScaffold {
@@ -15,16 +15,16 @@ internal fun Fragment.requireActivityScaffold(): ActivityScaffold {
     }
 }
 
-fun Fragment.setToolbarMode(toolbarMode: ToolbarMode){
+fun Fragment.setToolbarMode(toolbarMode: ToolbarMode) {
     requireActivityScaffold().setToolbarMode(toolbarMode)
 }
 
-fun Fragment.setBottomNavMode(bottomNavMode: BottomNavMode){
+fun Fragment.setBottomNavMode(bottomNavMode: BottomNavMode) {
     requireActivityScaffold().setBottomNavMode(bottomNavMode)
 }
 
-fun Fragment.setupActivityScaffold(){
-    if(this is FragmentScaffold){
+fun Fragment.setupActivityScaffold() {
+    if (this is FragmentScaffold) {
         setToolbarMode(toolbarMode())
         setBottomNavMode(bottomNavMode())
     }

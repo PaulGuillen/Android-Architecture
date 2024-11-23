@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.entity
+package com.devpaul.core_platform.entity
 
 enum class ResultAction(val tag: String) {
     POSITIVE(tag = "positive"),

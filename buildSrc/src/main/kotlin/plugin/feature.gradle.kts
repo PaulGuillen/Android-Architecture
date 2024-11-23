@@ -24,6 +24,8 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
+        dataBinding = true
     }
 
     buildTypes {
@@ -50,6 +52,11 @@ ksp {
 }
 
 dependencies {
+    implementation(project(":core-platform"))
+    implementation(project(":core-domain"))
+    implementation(project(":core-data"))
+    implementation(project(":navigation"))
+    implementation(project(":session"))
     androidCoreImplementation()
     androidTestingImplementation()
     uiCoreLibsImplementation()

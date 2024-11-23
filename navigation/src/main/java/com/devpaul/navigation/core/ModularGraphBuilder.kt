@@ -1,4 +1,4 @@
-package com.telefonica.navigation.core
+package com.devpaul.navigation.core
 
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment

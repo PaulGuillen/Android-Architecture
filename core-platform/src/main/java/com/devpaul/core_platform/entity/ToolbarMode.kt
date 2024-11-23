@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.entity
+package com.devpaul.core_platform.entity
 
 sealed class ToolbarMode {
 

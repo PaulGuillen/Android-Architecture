@@ -12,8 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways"
         android:background="?attr/colorPrimary"
-        android:elevation="6dp"
-        android:theme="@style/ToolbarTheme" />
+        android:elevation="6dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/progress"

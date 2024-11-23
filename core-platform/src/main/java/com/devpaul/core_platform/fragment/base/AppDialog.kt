@@ -1,13 +1,13 @@
-package com.telefonica.core_platform.fragment.base
+package com.devpaul.core_platform.fragment.base
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.NavDirections
-import com.telefonica.core_platform.fragment.onBackPressedCallback
-import com.telefonica.core_platform.fragment.navigate
+import com.devpaul.core_platform.fragment.onBackPressedCallback
+import com.devpaul.core_platform.fragment.navigate
 
-abstract class AppDialog: DialogFragment() {
+abstract class AppDialog : DialogFragment() {
 
     private val onBackPressedCallback by onBackPressedCallback()
 
@@ -19,8 +19,8 @@ abstract class AppDialog: DialogFragment() {
     /**
      * Muestra el Diálogo.
      */
-    protected fun DialogFragment.show(){
-        if(!isAdded){
+    protected fun DialogFragment.show() {
+        if (!isAdded) {
             this.show(this@AppDialog.childFragmentManager, null)
         }
     }
@@ -29,7 +29,7 @@ abstract class AppDialog: DialogFragment() {
      * Extensión de [NavDirections] que permite navegar utilizando las configuraciones de navegación
      * definidas en el Diálogo actual.
      */
-    fun NavDirections.navigate(){
+    fun NavDirections.navigate() {
         this@AppDialog.navigate(this)
     }
 

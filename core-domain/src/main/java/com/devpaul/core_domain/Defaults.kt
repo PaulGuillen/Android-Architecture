@@ -1,13 +1,10 @@
-package com.telefonica.core_domain.entity
-
-import com.telefonica.core_domain.entity.error.ApiErrorResponse
+package com.devpaul.core_domain
 
 sealed class Defaults<out E> {
 
     class HttpError<E>(
         val code: Int,
         val data: E,
-        val apiErrorResponse: ApiErrorResponse? = null,
         val throwable: Throwable? = null,
     ): Defaults<E>()
 

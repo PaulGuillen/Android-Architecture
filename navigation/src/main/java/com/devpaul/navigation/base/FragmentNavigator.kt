@@ -1,4 +1,4 @@
-package com.telefonica.navigation.base
+package com.devpaul.navigation.base
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
@@ -22,7 +22,7 @@ abstract class FragmentNavigator(
         if (popUpToId != null) {
             builder.setPopUpTo(
                 destinationId = popUpToId,
-                inclusive = inclusive
+                inclusive = inclusive,
             )
         }
         return builder.build()

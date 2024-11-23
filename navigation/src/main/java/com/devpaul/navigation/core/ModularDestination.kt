@@ -1,6 +1,6 @@
-package com.telefonica.navigation.core
+package com.devpaul.navigation.core
 
-import com.telefonica.navigation.core.Constants.REPLACE_ARG_NAME
+import com.devpaul.navigation.core.Constants.REPLACE_ARG_NAME
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.KSerializer
 

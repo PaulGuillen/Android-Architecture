@@ -25,7 +25,7 @@ import com.bumptech.glide.request.target.BaseTarget
 import com.bumptech.glide.request.target.SizeReadyCallback
 import com.bumptech.glide.request.target.Target
 import com.bumptech.glide.request.transition.Transition
-import com.telefonica.core.R
+import com.devpaul.core_platform.R
 
 fun getSpanned(textView: TextView, text: String) {
     val spannableString = SpannableString(text)

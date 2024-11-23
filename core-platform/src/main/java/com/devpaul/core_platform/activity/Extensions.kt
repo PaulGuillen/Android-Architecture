@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.activity
+package com.devpaul.core_platform.activity
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

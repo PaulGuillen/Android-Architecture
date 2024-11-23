@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import androidx.annotation.IdRes
 import androidx.core.os.bundleOf
@@ -9,9 +9,9 @@ import androidx.navigation.NavArgs
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.R
-import com.telefonica.core_platform.entity.DialogInteractionListener
+import com.devpaul.core_platform.entity.DialogInteractionListener
+import com.devpaul.navigation.core.getSafeArgs
 import com.telefonica.core_platform.lifecycle.StatefulViewModel
-import com.telefonica.navigation.core.getSafeArgs
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -49,7 +49,10 @@ fun Fragment.popBackStack(@IdRes destinationId: Int, inclusive: Boolean = false)
     }
 }
 
-fun <T : DialogFragment> T.withListener(listener: DialogInteractionListener, tag: String? = null): T {
+fun <T : DialogFragment> T.withListener(
+    listener: DialogInteractionListener,
+    tag: String? = null
+): T {
     this.lifecycle.addObserver(object : DefaultLifecycleObserver {
         override fun onCreate(owner: LifecycleOwner) {
             super.onCreate(owner)
@@ -77,12 +80,12 @@ fun Fragment.launch(
     )
 }
 
-fun <T: DialogFragment> T.isCancelable(isCancelable: Boolean): T {
+fun <T : DialogFragment> T.isCancelable(isCancelable: Boolean): T {
     this.isCancelable = isCancelable
     return this
 }
 
-fun <T: DialogFragment> T.fullscreen(): T {
+fun <T : DialogFragment> T.fullscreen(): T {
     setStyle(
         DialogFragment.STYLE_NORMAL,
         R.style.ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
@@ -90,7 +93,7 @@ fun <T: DialogFragment> T.fullscreen(): T {
     return this
 }
 
-fun <T: Fragment> T.putArgs(vararg pairs: Pair<String, Any?>): T {
+fun <T : Fragment> T.putArgs(vararg pairs: Pair<String, Any?>): T {
     arguments = bundleOf(*pairs)
     return this
 }

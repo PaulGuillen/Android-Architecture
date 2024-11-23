@@ -1,4 +1,4 @@
-package com.telefonica.navigation.core
+package com.devpaul.navigation.core
 
 object Constants {
     const val ARG_NAME = "bundle"

@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.fragment
+package com.devpaul.core_platform.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.telefonica.core_platform.fragment.base.AppFragment
+import com.devpaul.core_platform.fragment.base.AppFragment
 
 sealed class ViewFragment : AppFragment() {
 

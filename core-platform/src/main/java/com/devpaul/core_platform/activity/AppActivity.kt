@@ -1,12 +1,12 @@
-package com.telefonica.core_platform.activity
+package com.devpaul.core_platform.activity
 
 import android.view.View
 import androidx.annotation.IdRes
-import com.telefonica.navigation.core.activity.ModularActivity
+import com.devpaul.navigation.core.activity.ModularActivity
 
 abstract class AppActivity(
     @IdRes navHostFragmentId: Int
-): ModularActivity(navHostFragmentId) {
+) : ModularActivity(navHostFragmentId) {
 
     abstract fun fragmentContainer(): View
 }

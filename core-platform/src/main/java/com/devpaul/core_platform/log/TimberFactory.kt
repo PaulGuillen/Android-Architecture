@@ -1,6 +1,6 @@
 package com.devpaul.core_platform.log
 
-import com.devpaul.navigation.BuildConfig
+import com.devpaul.core_platform.BuildConfig
 import timber.log.Timber
 
 object TimberFactory {
