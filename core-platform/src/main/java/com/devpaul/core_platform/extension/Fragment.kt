@@ -1,5 +1,4 @@
-
-package com.telefonica.core_platform.extension
+package com.devpaul.core_platform.extension
 
 import android.content.Context
 import android.view.View

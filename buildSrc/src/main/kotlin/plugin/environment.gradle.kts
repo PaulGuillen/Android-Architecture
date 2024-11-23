@@ -14,7 +14,6 @@ project.extensions.findByType(BaseExtension::class.java)?.let { android ->
                 versionNameSuffix = "-prod"
                 versionName = "1.0.0"
                 versionCode = 1
-                buildFeatures.buildConfig = true
                 buildConfigField("String", "VERSION_NAME", "\"$versionName\"")
                 buildConfigField("String", "ENVIRONMENT", "\"prod\"")
                 buildConfigField("int", "VERSION_CODE", "$versionCode")

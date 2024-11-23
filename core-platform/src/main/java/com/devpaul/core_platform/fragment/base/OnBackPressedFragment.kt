@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.fragment.base
+package com.devpaul.core_platform.fragment.base
 
 interface OnBackPressedFragment {
 

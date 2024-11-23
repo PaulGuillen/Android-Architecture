@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.devpaul.core_platform.entity.BottomNavMode
 import com.devpaul.core_platform.entity.ToolbarMode
-import com.telefonica.core_platform.fragment.base.FragmentScaffold
+import com.devpaul.core_platform.fragment.base.FragmentScaffold
 
 internal fun Fragment.requireActivityScaffold(): ActivityScaffold {
     val result: FragmentActivity = requireActivity()

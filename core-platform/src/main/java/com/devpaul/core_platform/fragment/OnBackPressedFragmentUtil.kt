@@ -5,7 +5,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.telefonica.core_platform.fragment.base.OnBackPressedFragment
+import com.devpaul.core_platform.fragment.base.OnBackPressedFragment
 
 fun Fragment.onBackPressedCallback(): Lazy<OnBackPressedCallback?> {
     return object : Lazy<OnBackPressedCallback?> {

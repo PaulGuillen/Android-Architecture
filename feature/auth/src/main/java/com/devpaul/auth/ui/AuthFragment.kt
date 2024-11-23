@@ -1,24 +1,25 @@
 package com.devpaul.auth.ui
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.devpaul.auth.R
+import com.devpaul.auth.databinding.FragmentAuthBinding
 import com.devpaul.core_platform.activity.setToolbarMode
 import com.devpaul.core_platform.entity.ToolbarMode
-import com.devpaul.navigation.MainGraph
+import com.devpaul.core_platform.fragment.ViewFragment
+import com.devpaul.core_platform.fragment.base.OnBackPressedFragment
+import com.devpaul.core_platform.fragment.createViewModel
+import com.devpaul.core_platform.fragment.onUiState
 
-class AuthFragment : Fragment() {
+class AuthFragment : ViewFragment.Stateful<FragmentAuthBinding, AuthViewModel>(),
+    OnBackPressedFragment {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        setToolbarMode(ToolbarMode.Visible("Auth"))
-        return inflater.inflate(R.layout.fragment_auth, container, false)
+    override fun getViewModel() = createViewModel<AuthViewModel>()
+    override fun getViewBinding(inflater: LayoutInflater) =
+        FragmentAuthBinding.inflate(inflater)
+
+    override fun onInit() {
+
+        setToolbarMode(ToolbarMode.Visible("AuthFragment", true))
+
     }
 
 }

@@ -14,9 +14,8 @@ import com.devpaul.navigation.core.ModularDestination
 import com.devpaul.navigation.core.navigateTo
 import com.google.android.material.snackbar.Snackbar
 import com.devpaul.core_platform.fragment.onBackPressedCallback
-import com.telefonica.core_platform.extension.appContext
-import com.telefonica.core_platform.extension.viewContainer
-import com.telefonica.core_platform.fragment.base.FragmentScaffold
+import com.devpaul.core_platform.extension.appContext
+import com.devpaul.core_platform.extension.viewContainer
 
 abstract class AppFragment : Fragment(), FragmentScaffold {
 

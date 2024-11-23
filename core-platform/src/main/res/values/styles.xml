@@ -1,6 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="AndroidArchitecture" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="AndroidArchitecture" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/blue_bright</item>
         <item name="colorSecondary">@color/red_bright</item>
@@ -12,7 +12,7 @@
     <style name="AppTheme.Translucent" parent="AndroidArchitecture">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>
@@ -30,7 +30,6 @@
         <item name="android:fontFamily">@font/telefonica_regular</item>
     </style>
 
-
     <style name="BaseToolbarTheme">
         <item name="android:textColorPrimary">@color/colorTextSecondary</item>
         <item name="android:textColorSecondary">@color/colorTextPrimary</item>
@@ -41,24 +40,6 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/colorTextSecondary</item>
         <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="editTextShape">
-        <item name="android:background">@drawable/shape_et</item>
-        <item name="android:textColor">#6F7174</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:drawablePadding">8dp</item>
-        <item name="android:drawableLeft">@drawable/baseline_code_24</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/edittext_height</item>
-    </style>
-
-    <style name="BaseDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
-        <item name="android:background">@drawable/shape_et</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="colorPrimary">@color/green_bright</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="TextViewTitleHeader">
@@ -77,17 +58,6 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
-    </style>
-
-    <style name="etShapeSearch">
-        <item name="android:background">@drawable/shape_et</item>
-        <item name="android:textColor">@color/text_gray</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:drawablePadding">8dp</item>
-        <item name="android:drawableRight">@drawable/ic_search</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/edittext_height</item>
     </style>
 
     <style name="FullScreenBaseDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
@@ -110,43 +80,6 @@
         <item name="android:layout_marginBottom">0dp</item>
     </style>
 
-    <style name="GeneralButtonStyleGreen">
-        <item name="android:background">@drawable/rounded_button_green</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:backgroundTint">@color/green_bright</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:gravity">center</item>
-
-    </style>
-
-    <style name="GeneralButtonStyleBlue">
-        <item name="android:background">@drawable/rounded_button_blue</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:backgroundTint">@color/colorPrimary</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:gravity">center</item>
-
-    </style>
-
-    <style name="GeneralButtonStylePink">
-        <item name="android:background">@drawable/rounded_button_pink</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:backgroundTint">@color/pink</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:gravity">center</item>
-    </style>
-
     <style name="DropdownMenuStyleRegular" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu">
         <item name="boxBackgroundColor">@color/white</item>
         <item name="errorIconDrawable">@null</item>
@@ -167,12 +100,4 @@
         <item name="android:paddingEnd">0dp</item>
     </style>
 
-    <style name="EdiTextShapeNoIcon">
-        <item name="android:background">@drawable/shape_et</item>
-        <item name="android:textColor">@color/text_gray</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/edittext_height</item>
-    </style>
 </resources>
