@@ -1,18 +1,20 @@
-package com.telefonica.core_platform.lifecycle
+package com.devpaul.core_platform.lifecycle
 
 import androidx.lifecycle.ViewModel
 import com.devpaul.core_domain.Defaults
-import com.telefonica.core_platform.lifecycle.base.UiEventHolder
-import com.telefonica.core_platform.lifecycle.base.UiIntentHolder
-import com.telefonica.core_platform.lifecycle.base.ViewModelLoadable
+import com.devpaul.core_platform.lifecycle.base.UiEventHolder
+import com.devpaul.core_platform.lifecycle.base.UiIntentHolder
+import com.devpaul.core_platform.lifecycle.base.ViewModelLoadable
 import com.devpaul.core_domain.Output
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.trySendBlocking
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.receiveAsFlow
+import timber.log.Timber
 
-abstract class StatelessViewModel<UiIntent, UiEvent> : ViewModel(), UiEventHolder<UiEvent>, UiIntentHolder<UiIntent>, ViewModelLoadable {
+abstract class StatelessViewModel<UiIntent, UiEvent> : ViewModel(), UiEventHolder<UiEvent>,
+    UiIntentHolder<UiIntent>, ViewModelLoadable {
 
     private val uiEventChannel = Channel<UiEvent>(Channel.BUFFERED)
     private val uiIntentChannel = Channel<UiIntent>(Channel.BUFFERED)
@@ -22,6 +24,7 @@ abstract class StatelessViewModel<UiIntent, UiEvent> : ViewModel(), UiEventHolde
         get() = _isLoading.value
         set(value) {
             _isLoading.tryEmit(value)
+            Timber.d("isLoading - value: $value")
         }
 
     init {
@@ -46,6 +49,7 @@ abstract class StatelessViewModel<UiIntent, UiEvent> : ViewModel(), UiEventHolde
 
     override suspend fun onLoading(listener: (isLoading: Boolean) -> Unit) {
         _isLoading.collectLatest {
+            Timber.d("isLoading - OnLoading: $it")
             listener(it)
         }
     }

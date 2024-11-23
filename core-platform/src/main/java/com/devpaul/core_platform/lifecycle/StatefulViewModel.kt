@@ -1,10 +1,10 @@
-package com.telefonica.core_platform.lifecycle
+package com.devpaul.core_platform.lifecycle
 
 import android.os.Parcelable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
-import com.telefonica.core_platform.lifecycle.base.UiStateHolder
+import com.devpaul.core_platform.lifecycle.base.UiStateHolder
 
 abstract class StatefulViewModel<UiState, UiIntent, UiEvent>(
     defaultUIState: () -> UiState,

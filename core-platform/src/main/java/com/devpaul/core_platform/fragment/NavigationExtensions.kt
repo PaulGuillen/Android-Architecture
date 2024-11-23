@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.R
 import com.devpaul.core_platform.entity.DialogInteractionListener
 import com.devpaul.navigation.core.getSafeArgs
-import com.telefonica.core_platform.lifecycle.StatefulViewModel
+import com.devpaul.core_platform.lifecycle.StatefulViewModel
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext

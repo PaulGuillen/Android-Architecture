@@ -3,7 +3,7 @@ package com.devpaul.core_platform.activity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
-import com.telefonica.core_platform.lifecycle.base.ViewModelLoadable
+import com.devpaul.core_platform.lifecycle.base.ViewModelLoadable
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.lifecycle.base
+package com.devpaul.core_platform.lifecycle.base
 
 interface UiEventHolder<UiEvent> {
 

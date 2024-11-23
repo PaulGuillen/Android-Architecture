@@ -1,4 +1,4 @@
-package com.telefonica.core_platform.lifecycle
+package com.devpaul.core_platform.lifecycle
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

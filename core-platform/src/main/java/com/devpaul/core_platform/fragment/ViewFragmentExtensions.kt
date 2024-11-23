@@ -4,12 +4,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import com.devpaul.core_domain.Defaults
-import com.telefonica.core_platform.lifecycle.StatelessViewModel
-import com.telefonica.core_platform.lifecycle.base.UiEventHolder
-import com.telefonica.core_platform.lifecycle.base.UiStateHolder
-import com.telefonica.core_platform.lifecycle.base.ViewModelLoadable
+import com.devpaul.core_platform.lifecycle.StatelessViewModel
+import com.devpaul.core_platform.lifecycle.base.UiEventHolder
+import com.devpaul.core_platform.lifecycle.base.UiStateHolder
+import com.devpaul.core_platform.lifecycle.base.ViewModelLoadable
 import com.devpaul.core_platform.activity.handleLoading
-import com.telefonica.core_platform.lifecycle.StatefulViewModel
+import com.devpaul.core_platform.lifecycle.StatefulViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.navigation.koinNavGraphViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
