@@ -3,6 +3,7 @@ package plugin
 import Config
 import dependence.androidCoreImplementation
 import dependence.androidTestingImplementation
+import dependence.composeImplementation
 import dependence.koinImplementation
 
 plugins {
@@ -33,6 +34,7 @@ android {
         viewBinding = true
         buildConfig = true
         dataBinding = true
+        compose = true
     }
 
     buildTypes {
@@ -54,6 +56,10 @@ android {
         jvmTarget = Config.javaVersion.toString()
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -70,4 +76,5 @@ dependencies {
     androidCoreImplementation()
     koinImplementation()
     androidTestingImplementation()
+    composeImplementation()
 }

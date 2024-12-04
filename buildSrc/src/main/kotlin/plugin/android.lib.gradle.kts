@@ -1,6 +1,9 @@
 package plugin
 
-import dependence.*
+import Config
+import dependence.androidCoreImplementation
+import dependence.androidTestingImplementation
+import dependence.composeImplementation
 
 plugins {
     id("com.android.library")
@@ -15,15 +18,18 @@ android {
 
     defaultConfig {
         minSdk = Config.MIN_SDK
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildFeatures {
         viewBinding = true
         buildConfig = true
         dataBinding = true
+        compose = true
     }
 
 
@@ -46,6 +52,10 @@ android {
         jvmTarget = Config.javaVersion.toString()
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
+    }
+
 }
 
 ksp {
@@ -55,4 +65,5 @@ ksp {
 dependencies {
     androidCoreImplementation()
     androidTestingImplementation()
+    composeImplementation()
 }

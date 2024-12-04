@@ -2,27 +2,30 @@ package com.devpaul.android_architecture.presentation
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.Surface
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.navigation.compose.rememberNavController
 import com.devpaul.android_architecture.R
 import com.devpaul.android_architecture.databinding.ActivityMainBinding
-import com.devpaul.android_architecture.navigation.setupNavigation
+import com.devpaul.android_architecture.navigation.ComposeNavGraph
 import com.devpaul.core_platform.activity.ActivityScaffold
 import com.devpaul.core_platform.activity.AppActivity
 import com.devpaul.core_platform.activity.LoadingActivity
 import com.devpaul.core_platform.entity.ToolbarMode
-import timber.log.Timber
+import androidx.compose.material3.Surface
 
 class MainActivity : AppActivity(
     navHostFragmentId = R.id.main_content
 ), LoadingActivity, ActivityScaffold {
 
-    // ViewBinding para la actividad principal
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    // Indicador de carga
     override var isLoading: Boolean
         get() = progressBar().isVisible
         set(value) {
@@ -33,15 +36,19 @@ class MainActivity : AppActivity(
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupToolbar()
-        setupNavigation()
+      //  setupNavigation()
+        setContent {
+            Surface(color = MaterialTheme.colorScheme.background) {
+                val navController = rememberNavController()
+                ComposeNavGraph(navController)
+            }
+        }
     }
 
-    // Configuración inicial de la Toolbar
     private fun setupToolbar() {
         setSupportActionBar(binding.toolBarContainer.toolbar)
     }
 
-    // Actualiza el estado de la Toolbar basado en el ToolbarMode
     override fun setToolbarMode(toolbarMode: ToolbarMode) {
         when (toolbarMode) {
             ToolbarMode.Hide -> hideToolbar()
@@ -51,12 +58,10 @@ class MainActivity : AppActivity(
         }
     }
 
-    // Oculta la Toolbar
     private fun hideToolbar() {
         binding.toolBarContainer.toolbar.isVisible = false
     }
 
-    // Muestra y configura la Toolbar
     private fun showToolbar(toolbarMode: ToolbarMode.Visible) {
         binding.toolBarContainer.toolbar.apply {
             isVisible = true
@@ -73,7 +78,6 @@ class MainActivity : AppActivity(
         }
     }
 
-    // Restablece la Toolbar al estado por defecto
     private fun resetToolbar() {
         binding.toolBarContainer.toolbar.apply {
             isVisible = true
@@ -82,9 +86,7 @@ class MainActivity : AppActivity(
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
-    // Obtiene la barra de progreso
     private fun progressBar() = binding.toolBarContainer.progress
 
-    // Contenedor para fragmentos
     override fun fragmentContainer() = binding.mainContent
 }
