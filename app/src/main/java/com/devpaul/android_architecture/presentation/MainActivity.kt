@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Surface
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.core.content.ContextCompat
@@ -35,8 +36,9 @@ class MainActivity : AppActivity(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setupToolbar()
+       // setupToolbar()
       //  setupNavigation()
+        enableEdgeToEdge()
         setContent {
             Surface(color = MaterialTheme.colorScheme.background) {
                 val navController = rememberNavController()
