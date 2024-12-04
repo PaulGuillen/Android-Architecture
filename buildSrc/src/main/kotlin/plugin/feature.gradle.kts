@@ -42,9 +42,11 @@ android {
         sourceCompatibility = Config.javaVersion
         targetCompatibility = Config.javaVersion
     }
+
     kotlinOptions {
         jvmTarget = Config.javaVersion.toString()
     }
+
 }
 
 ksp {
@@ -63,4 +65,5 @@ dependencies {
     navigationFragmentImplementation()
     retrofitImplementation()
     koinImplementation()
+    composeImplementation()
 }

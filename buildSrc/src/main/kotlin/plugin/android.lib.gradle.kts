@@ -41,9 +41,11 @@ android {
         sourceCompatibility = Config.javaVersion
         targetCompatibility = Config.javaVersion
     }
+
     kotlinOptions {
         jvmTarget = Config.javaVersion.toString()
     }
+
 }
 
 ksp {

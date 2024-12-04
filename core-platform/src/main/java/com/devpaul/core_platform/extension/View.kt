@@ -41,6 +41,7 @@ fun getSpanned(textView: TextView, text: String) {
 
     textView.text = spannableString
 }
+
 fun TextView.applyStyle(colorRes: Int, typeface: Typeface = Typeface.DEFAULT) {
     setTextColor(ContextCompat.getColor(context, colorRes))
     this.typeface = typeface
