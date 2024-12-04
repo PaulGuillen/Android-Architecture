@@ -4,8 +4,8 @@ plugins {
 
 android {
     namespace = "com.devpaul.auth"
-
 }
+
 dependencies {
     implementation(project(":feature:util"))
 }
