@@ -18,6 +18,7 @@ import com.devpaul.core_platform.activity.AppActivity
 import com.devpaul.core_platform.activity.LoadingActivity
 import com.devpaul.core_platform.entity.ToolbarMode
 import androidx.compose.material3.Surface
+import com.devpaul.android_architecture.navigation.setupNavigation
 
 class MainActivity : AppActivity(
     navHostFragmentId = R.id.main_content
@@ -36,15 +37,15 @@ class MainActivity : AppActivity(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-       // setupToolbar()
-      //  setupNavigation()
-        enableEdgeToEdge()
-        setContent {
-            Surface(color = MaterialTheme.colorScheme.background) {
-                val navController = rememberNavController()
-                ComposeNavGraph(navController)
-            }
-        }
+       setupToolbar()
+      setupNavigation()
+//        enableEdgeToEdge()
+//        setContent {
+//            Surface(color = MaterialTheme.colorScheme.background) {
+//                val navController = rememberNavController()
+//                ComposeNavGraph(navController)
+//            }
+//        }
     }
 
     private fun setupToolbar() {
