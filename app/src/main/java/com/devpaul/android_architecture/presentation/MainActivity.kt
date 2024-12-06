@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.bumptech.glide.Glide
 import com.devpaul.android_architecture.R
 import com.devpaul.android_architecture.databinding.ActivityMainBinding
 import com.devpaul.android_architecture.navigation.setupNavigation
@@ -12,6 +11,7 @@ import com.devpaul.core_platform.activity.ActivityScaffold
 import com.devpaul.core_platform.activity.AppActivity
 import com.devpaul.core_platform.activity.LoadingActivity
 import com.devpaul.core_platform.entity.ToolbarMode
+import com.devpaul.core_platform.ui.LoadingFragment
 
 class MainActivity : AppActivity(
     navHostFragmentId = R.id.main_content
@@ -22,9 +22,13 @@ class MainActivity : AppActivity(
     }
 
     override var isLoading: Boolean
-        get() = loadingAnimation().isVisible
+        get() = supportFragmentManager.findFragmentByTag(LOADING_FRAGMENT) != null
         set(value) {
-            loadingAnimation().isVisible = value
+            if (value) {
+                showLoadingFragment()
+            } else {
+                hideLoadingFragment()
+            }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,14 +36,24 @@ class MainActivity : AppActivity(
         setContentView(binding.root)
         setupToolbar()
         setupNavigation()
-        Glide.with(this).load(com.devpaul.core_platform.R.drawable.gif_loading_green).into(binding.loadingContainer.ivLoading)
-//        enableEdgeToEdge()
-//        setContent {
-//            Surface(color = MaterialTheme.colorScheme.background) {
-//                val navController = rememberNavController()
-//                ComposeNavGraph(navController)
-//            }
-//        }
+    }
+
+    private fun showLoadingFragment() {
+        if (supportFragmentManager.findFragmentByTag(LOADING_FRAGMENT) == null) {
+            val loadingFragment = LoadingFragment()
+            supportFragmentManager.beginTransaction()
+                .add(android.R.id.content, loadingFragment, LOADING_FRAGMENT)
+                .commitAllowingStateLoss()
+        }
+    }
+
+    private fun hideLoadingFragment() {
+        val fragment = supportFragmentManager.findFragmentByTag(LOADING_FRAGMENT)
+        fragment?.let {
+            supportFragmentManager.beginTransaction()
+                .remove(it)
+                .commitAllowingStateLoss()
+        }
     }
 
     private fun setupToolbar() {
@@ -83,9 +97,9 @@ class MainActivity : AppActivity(
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
-    private fun progressBar() = binding.toolBarContainer.progress
-
-    private fun loadingAnimation() = binding.linearLoading
-
     override fun fragmentContainer() = binding.mainContent
+
+    companion object {
+        private const val LOADING_FRAGMENT = "LoadingFragment"
+    }
 }

@@ -43,7 +43,7 @@
     <color name="viewfinder_frame">#FF526F35</color>
     <color name="viewfinder_laser">#FF7FFF00</color>
     <color name="viewfinder_mask">#607CFC00</color>
-    <color name="colorWhiteTransparent">#81FFFFFF</color>
+    <color name="colorWhiteTransparent">#66FFFFFF</color>
 
     <!-- Accent colors -->
     <color name="accent">#2196F3</color>
