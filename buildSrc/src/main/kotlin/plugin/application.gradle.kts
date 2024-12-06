@@ -5,6 +5,7 @@ import dependence.androidCoreImplementation
 import dependence.androidTestingImplementation
 import dependence.composeImplementation
 import dependence.koinImplementation
+import dependence.uiCoreLibsImplementation
 
 plugins {
     id("com.android.application")
@@ -74,6 +75,7 @@ ksp {
 dependencies {
     implementation(project(":core-platform"))
     androidCoreImplementation()
+    uiCoreLibsImplementation()
     koinImplementation()
     androidTestingImplementation()
     composeImplementation()

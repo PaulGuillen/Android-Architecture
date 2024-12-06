@@ -2,23 +2,16 @@ package com.devpaul.android_architecture.presentation
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Surface
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import androidx.navigation.compose.rememberNavController
+import com.bumptech.glide.Glide
 import com.devpaul.android_architecture.R
 import com.devpaul.android_architecture.databinding.ActivityMainBinding
-import com.devpaul.android_architecture.navigation.ComposeNavGraph
+import com.devpaul.android_architecture.navigation.setupNavigation
 import com.devpaul.core_platform.activity.ActivityScaffold
 import com.devpaul.core_platform.activity.AppActivity
 import com.devpaul.core_platform.activity.LoadingActivity
 import com.devpaul.core_platform.entity.ToolbarMode
-import androidx.compose.material3.Surface
-import com.devpaul.android_architecture.navigation.setupNavigation
 
 class MainActivity : AppActivity(
     navHostFragmentId = R.id.main_content
@@ -29,16 +22,17 @@ class MainActivity : AppActivity(
     }
 
     override var isLoading: Boolean
-        get() = progressBar().isVisible
+        get() = loadingAnimation().isVisible
         set(value) {
-            progressBar().isVisible = value
+            loadingAnimation().isVisible = value
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-       setupToolbar()
-      setupNavigation()
+        setupToolbar()
+        setupNavigation()
+        Glide.with(this).load(com.devpaul.core_platform.R.drawable.gif_loading_green).into(binding.loadingContainer.ivLoading)
 //        enableEdgeToEdge()
 //        setContent {
 //            Surface(color = MaterialTheme.colorScheme.background) {
@@ -90,6 +84,8 @@ class MainActivity : AppActivity(
     }
 
     private fun progressBar() = binding.toolBarContainer.progress
+
+    private fun loadingAnimation() = binding.linearLoading
 
     override fun fragmentContainer() = binding.mainContent
 }
