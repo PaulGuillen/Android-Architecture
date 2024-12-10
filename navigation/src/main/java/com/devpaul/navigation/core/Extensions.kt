@@ -1,6 +1,7 @@
 package com.devpaul.navigation.core
 
 import androidx.annotation.IdRes
+import androidx.compose.runtime.Composable
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -9,6 +10,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.devpaul.navigation.core.internal.ModularGraphBuilderImpl
+import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.serializer
 
@@ -42,6 +44,29 @@ inline fun <reified F: Fragment, reified Args> ModularGraphBuilder.fragment() {
         destination = destinationOf<Args>(),
     )
 }
+
+//inline fun <reified Args> ModularDestination.decodeArgs(
+//    route: String,
+//    serializer: KSerializer<Args>
+//): Args {
+//    val json = route.substringAfterLast("/")
+//    return Json.decodeFromString(serializer, json)
+//}
+//
+//
+//inline fun <reified Args> ModularGraphBuilder.compose(
+//    noinline content: @Composable (Args) -> Unit
+//) {
+//    createComposable(
+//        destination = destinationOf<Args>(),
+//        content = { backStackEntry ->
+//            val route = backStackEntry.destination.route
+//            val serializer = serializer<Args>()
+//            val args = destinationOf<Args>().decodeArgs(route.toString(), serializer)
+//            content(args)
+//        }
+//    )
+//}
 
 inline fun <reified F: DialogFragment, reified Args> ModularGraphBuilder.dialog() {
     createDialog(

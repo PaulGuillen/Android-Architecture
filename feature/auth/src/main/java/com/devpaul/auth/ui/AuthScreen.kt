@@ -1,14 +1,13 @@
-package com.devpaul.auth
+package com.devpaul.auth.ui
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.devpaul.auth.ui.theme.AndroidArchitectureTheme
+import com.devpaul.navigation.MainGraph
 
 @Composable
-fun AuthScreen(navController: NavHostController) {
+fun AuthScreen(args: MainGraph.AuthArgs) {
     Text(
         text = "Hello Test!",
     )
@@ -18,6 +17,6 @@ fun AuthScreen(navController: NavHostController) {
 @Composable
 fun GreetingPreview() {
     AndroidArchitectureTheme {
-        AuthScreen(navController = rememberNavController())
+        AuthScreen(MainGraph.AuthArgs("",""))
     }
 }

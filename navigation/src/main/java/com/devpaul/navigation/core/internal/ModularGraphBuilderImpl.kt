@@ -1,16 +1,20 @@
 package com.devpaul.navigation.core.internal
 
+import androidx.compose.runtime.Composable
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
+import androidx.navigation.compose.composable
 import androidx.navigation.fragment.DialogFragmentNavigator
 import androidx.navigation.fragment.DialogFragmentNavigatorDestinationBuilder
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.get
+import androidx.navigation.navArgument
 import com.devpaul.navigation.core.Constants
 import com.devpaul.navigation.core.ModularDestination
 import com.devpaul.navigation.core.ModularGraphBuilder
@@ -43,6 +47,23 @@ internal class ModularGraphBuilderImpl(
         }
         navGraphBuilder.destination(builderDestination)
     }
+
+//    override fun createComposable(
+//        destination: ModularDestination,
+//        content: @Composable (NavBackStackEntry) -> Unit
+//    ) {
+//        navGraphBuilder.composable(
+//            route = destination.route,
+//            arguments = listOf(
+//                navArgument(Constants.ARG_NAME) {
+//                    type = NavType.StringType
+//                    defaultValue = ""
+//                }
+//            )
+//        ) { backStackEntry ->
+//            content(backStackEntry)
+//        }
+//    }
 
     override fun createDialog(
         destination: ModularDestination,

@@ -9,4 +9,7 @@ class MainGraph {
 
     @Serializable
     object AuthFragment
+
+    @Serializable
+    data class AuthArgs(val userId: String, val token: String)
 }
